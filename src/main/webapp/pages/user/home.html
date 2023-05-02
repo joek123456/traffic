@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.js"></script>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
+		<style>
+			
+			ul{
+				list-style: none;
+				padding-left: 20px;
+			}
+			.list div{
+				
+				height: 40px;
+				line-height: 40px;
+				cursor: pointer;
+			}
+			.list div:hover,.list ul li:hover{
+				background: silver;
+			}
+			.list ul li{
+				height: 30px;
+				line-height: 30px;
+				cursor: pointer;
+			}
+			.col-md-2{
+				/* overflow-y: scroll; */
+			}
+			
+		</style>
+	</head>
+	<body style="padding: 0 20px;">
+		<div class="" style="height: 100%">
+			<div class="row" style=" background-color: aquamarine;">
+				<div class="col-md-9">
+					<h2>欢迎使用智慧交通系统</h2>
+				</div>
+				<div class="col-md-3" style="background-color: bisque;">
+					<span style="text-align: center;">用户</span>
+				</div>
+			</div>
+			<div class="row" style="">
+				<div class="col-md-2" style="height: 100%;">
+					<ul class="list" style="height: 100%;">
+						<li>
+							<div>首页</div>
+							<ul>
+								<li>11</li>
+								<li>22</li>
+								<li>33</li>
+							</ul>
+						</li>
+						<li>
+							<div>二</div>
+							<ul>
+								<li>12222</li>
+							</ul>
+						</li>
+						<li>
+							<div>三</div>
+							<ul>
+								<li>11</li>
+								<li>22</li>
+								<li>33</li>
+							</ul>
+						</li>
+						<li>
+							<div>四</div>
+							<ul>
+								<li>11</li>
+								<li>22</li>
+								<li>33</li>
+							</ul>
+						</li>
+						<li>
+							<div>五</div>
+							<ul>
+								<li>11</li>
+								<li>22</li>
+								<li>33</li>
+							</ul>
+						</li>
+						<li>
+							<div>六</div>
+							<ul>
+								<li>11</li>
+								<li>22</li>
+								<li>33</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-10">
+					<iframe src="user/userRegister.html" frameborder="0" style="width: 100%; height: 600px;">
+
+					</iframe>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		$(".list ul").hide();
+		$(".list>li>div").click(function(){
+			var aa = $(this).next().slideToggle(300).parent("li").siblings().children(".list>li>ul").slideUp(300);
+		})
+	</script>
+</html>
