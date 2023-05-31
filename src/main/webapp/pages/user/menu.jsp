@@ -79,16 +79,6 @@
             <div>发表记录</div>
         </a>
     </li>
-
-    <li>
-        <div  onclick="requestUrlToServer('1')">个人信息管理</div>
-        <ul>
-
-            <li>发表记录</li>
-            <li>收到的留言</li>
-            <li>${pageContext.request.contextPath}</li>
-        </ul>
-    </li>
 </ul>
 
 

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -59,9 +60,15 @@ public class UserController {
             modelAndView.addObject("msg", "密码输入错误，请重新输入~");
             return modelAndView;
         }
-        session.setAttribute("nowUser", user);
+        //modelAndView = new ModelAndView(new RedirectView("/pages/user/home.jsp"));
+        session.setAttribute("nowUser", user);  // 为了登录拦截
         modelAndView.addObject("user", user);
-        modelAndView.setViewName("/pages/user/home");
+        modelAndView.setViewName("/pages/user/home");   // 为了页面跳转
+
+        // 查询用户首页的notice
+        List<Notice> all = noticeService.findAll();
+        modelAndView.addObject("noticeList", all);
+
         return modelAndView;
     }
 
